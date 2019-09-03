@@ -1,0 +1,31 @@
+.message {
+  text-align: left;
+  padding: 6px;
+  margin-bottom: 4px;
+  border-radius: 4px;
+  position: relative;
+  border-bottom: 1px dotted #CCC;
+  
+  .message {
+    &--data {
+      font-size: 80%;
+    }
+
+    &--user {
+      font-weight: bold;
+      color: dodgerblue;
+    }
+
+    &--datetime {
+      font-size: 70%;
+    }
+  }
+
+  &--from {
+    .message {
+      &--user {
+        color: #333;
+      }
+    }
+  }
+}

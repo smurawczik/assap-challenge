@@ -1,0 +1,11 @@
+.chat {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  > .chat-view {
+    flex-grow: 1;
+    position: relative;
+    border: 1px solid #DDD;
+    padding-bottom: 40px;
+  }
+}

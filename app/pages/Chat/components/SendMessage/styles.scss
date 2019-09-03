@@ -1,0 +1,32 @@
+.send-message {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  max-height: calc(100vh - 40px);
+  overflow-y: scroll;
+
+  .send-message {
+    &--input {
+      padding: 8px;
+      height: 40px;
+      width: 100%;
+
+      &:focus {
+        outline: 0;
+        border: 2px solid dodgerblue;
+      }
+    }
+
+    &--submit {
+      position: absolute;
+      right: 0;
+      top: 0;
+      border: 0;
+      background-color: dodgerblue;
+      color: white;
+      padding: 8px 16px;
+      height: 40px;
+      cursor: pointer;
+    }
+  }
+}

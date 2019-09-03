@@ -1,25 +1,18 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
+import { StateProvider, InitialState } from '../app/components/GlobalStateManager';
+
+import Chat from '../app/pages/Chat';
+import ChatReducer from '../app/pages/Chat/reducers';
 
 import './App.scss';
 
-function App() {
+const App = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StateProvider initialState={InitialState} reducer={ChatReducer}>
+      <Chat />
+    </StateProvider>
   );
 }
 
