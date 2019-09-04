@@ -11,10 +11,19 @@ const Messages = ({ className, singleMessageClassName, from }) => {
   const [{ room }] = useGlobalState();
   const { messages } = room;
 
+  let previousMessage;
+
   return (
     <div className={className}>
       {
-        messages && messages.map((message, i) => <Message key={i} message={message} from={from} />)
+        messages && messages.map((message, i) => {
+          let repeatedUserMessage = false;
+          if (previousMessage && previousMessage.from === message.from) {
+            repeatedUserMessage = true;
+          }
+          previousMessage = message;
+          return <Message key={i} message={message} from={from} repeatedUserMessage={repeatedUserMessage} />
+        })
       }
     </div>
   );

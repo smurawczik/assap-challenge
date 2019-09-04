@@ -3,20 +3,20 @@ import moment from 'moment';
 export const initialState = {
   room: {
     roomId: 1,
-    users: [
-      {
+    users: {
+      admin: {
         id: 1,
         name: "Laura",
         // TODO move to constants
         type: "ADMIN"
       },
-      {
+      customer: {
         id: 2,
         name: "Rob",
         // TODO move to constants
         type: "CUSTOMER"
       }
-    ],
+    },
     messages: [
       {
         from: 1,

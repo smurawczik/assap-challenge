@@ -1,32 +1,37 @@
-.send-message {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  max-height: calc(100vh - 40px);
-  overflow-y: scroll;
+.send-message--container {
+  position: relative;
 
   .send-message {
     &--input {
       padding: 8px;
       height: 40px;
       width: 100%;
+      padding-left: 65px;
+      resize: none;
+      border: 2px solid dodgerblue;
+      border-radius: 4px;
 
       &:focus {
         outline: 0;
-        border: 2px solid dodgerblue;
+        border: 2px solid darken(dodgerblue, 5%);
       }
     }
 
     &--submit {
       position: absolute;
-      right: 0;
+      left: 0;
       top: 0;
       border: 0;
+      border-radius: 4px 0 0 4px;
       background-color: dodgerblue;
       color: white;
       padding: 8px 16px;
       height: 40px;
       cursor: pointer;
+
+      &:hover, &:focus {
+        background-color: darken(dodgerblue, 5%);
+      }
     }
   }
 }

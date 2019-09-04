@@ -6,21 +6,35 @@ const reducer = (state, action) => {
         messages: [...state.messages, action.message],
       };
     
-    case 'USER_TYPING':
+    case 'CUSTOMER_TYPING':
       return {
-        ...state,
         room: {
           ...state.room,
-          userTyping: action.isTyping,
-        }
+          users: {
+            admin: {
+              ...state.room.users.admin,
+            },
+            customer: {
+              ...state.room.users.customer,
+              typing: action.typing,
+            }
+          }
+        },
       };
     case 'ADMIN_TYPING':
       return {
-        ...state,
         room: {
           ...state.room,
-          adminTyping: action.isTyping,
-        }
+          users: {
+            admin: {
+              ...state.room.users.admin,
+              typing: action.typing,
+            },
+            customer: {
+              ...state.room.users.customer,
+            }
+          },
+        },
       };
 
     default:
