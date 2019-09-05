@@ -1,5 +1,6 @@
 export const MESSAGE_STATUS = {
   SEND: "SEND",
+  SEEN: "SEEN",
   RECEIVED: "RECEIVED",
 };
 

@@ -32,7 +32,6 @@ const Messages = ({ className, from }) => {
 
 Messages.defaultProps = {
   className: 'messages',
-  singleMessageClassName: 'message',
 }
 
 export default Messages;

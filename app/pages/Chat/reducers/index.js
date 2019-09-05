@@ -8,6 +8,16 @@ const reducer = (state, action) => {
         }
       };
     
+    case 'MESSAGE_SEEN':
+      const latestMessage = state.room.messages.pop();
+      latestMessage.fromStatus = action.status;
+      return {
+        room: {
+          ...state.room,
+          messages: [...state.room.messages, latestMessage],
+        }
+      };
+    
     case 'CUSTOMER_TYPING':
       return {
         room: {
@@ -34,6 +44,39 @@ const reducer = (state, action) => {
             },
             customer: {
               ...state.room.users.customer,
+            }
+          },
+        },
+      };
+    
+    case 'CUSTOMER_FOCUS':
+      return {
+        room: {
+          ...state.room,
+          users: {
+            admin: {
+              ...state.room.users.admin,
+              focus: false,
+            },
+            customer: {
+              ...state.room.users.customer,
+              focus: action.focus,
+            }
+          }
+        },
+      };
+    case 'ADMIN_FOCUS':
+      return {
+        room: {
+          ...state.room,
+          users: {
+            admin: {
+              ...state.room.users.admin,
+              focus: action.focus,
+            },
+            customer: {
+              ...state.room.users.customer,
+              focus: false,
             }
           },
         },

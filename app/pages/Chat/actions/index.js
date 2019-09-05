@@ -9,6 +9,20 @@ export const isTyping = (user, typing) => {
   }
 }
 
+export const focusChat = (user, focus) => {
+  return {
+    type: `${user.type}_FOCUS`,
+    focus,
+  }
+}
+
+export const messageSeen = () => {
+  return {
+    type: `MESSAGE_SEEN`,
+    status: MESSAGE_STATUS.SEEN,
+  }
+}
+
 export const sendMessageTo = (from, to, message) => {
   return {
     type: "SEND_MESSAGE",

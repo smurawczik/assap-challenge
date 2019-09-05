@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { useGlobalState } from '../../components/hooks';
-
 import ChatView from './components/ChatView';
+
+import { useGlobalState } from '../../components/hooks';
 
 import './styles.scss';
 
