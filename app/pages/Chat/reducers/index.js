@@ -2,8 +2,10 @@ const reducer = (state, action) => {
   switch (action.type) {
     case 'SEND_MESSAGE':
       return {
-        ...state,
-        messages: [...state.messages, action.message],
+        room: {
+          ...state.room,
+          messages: [...state.room.messages, {...action.message, id: state.room.messages.length + 1}],
+        }
       };
     
     case 'CUSTOMER_TYPING':

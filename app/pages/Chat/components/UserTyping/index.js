@@ -2,11 +2,9 @@ import React from 'react';
 
 import './styles.scss';
 
-const UserTyping = ({ className, user }) => {
-
-  console.log(user);
+const UserTyping = ({ className, from }) => {
   return (
-    <div className={className}>{user.typing ? `${user.name} esta escribiendo...` : ''}</div>
+    <div className={className}>{from.typing ? `${from.name} is writing...` : ''}</div>
   );
 }
 

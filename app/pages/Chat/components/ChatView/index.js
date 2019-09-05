@@ -6,13 +6,13 @@ import UserTyping from '../UserTyping';
 
 import './styles.scss';
 
-const ChatView = ({ className, user, counterPart }) => {
+const ChatView = ({ className, from, to }) => {
 
   return (
     <div className={className}>
-      <Messages from={user.id} />
-      <UserTyping user={counterPart} />
-      <SendMessage user={user} />
+      <Messages from={from.id} />
+      <UserTyping from={to} />
+      <SendMessage from={from} to={to} />
     </div>
   );
 }

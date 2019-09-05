@@ -6,7 +6,7 @@ import { useGlobalState } from '../../../../components/hooks';
 
 import './styles.scss';
 
-const Messages = ({ className, singleMessageClassName, from }) => {
+const Messages = ({ className, from }) => {
 
   const [{ room }] = useGlobalState();
   const { messages } = room;
@@ -22,8 +22,9 @@ const Messages = ({ className, singleMessageClassName, from }) => {
             repeatedUserMessage = true;
           }
           previousMessage = message;
-          return <Message key={i} message={message} from={from} repeatedUserMessage={repeatedUserMessage} />
+          return <Message key={i} message={message} from={from} lastMessage={i === messages.length - 1} repeatedUserMessage={repeatedUserMessage} />
         })
+
       }
     </div>
   );

@@ -14,8 +14,8 @@ const Chat = ({ className }) => {
 
   return (
     <div className={className}>
-      <ChatView user={admin} counterPart={user} />
-      <ChatView user={user} counterPart={admin} />
+      <ChatView from={admin} to={user} />
+      <ChatView from={user} to={admin} />
     </div>
   );
 }
