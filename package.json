@@ -18,6 +18,8 @@
     "css-loader": "2.1.1",
     "dotenv": "6.2.0",
     "dotenv-expand": "4.2.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "eslint": "^6.1.0",
     "eslint-config-react-app": "^5.0.1",
     "eslint-loader": "2.2.1",
@@ -50,6 +52,7 @@
     "react-app-polyfill": "^1.0.2",
     "react-dev-utils": "^9.0.3",
     "react-dom": "^16.9.0",
+    "react-test-renderer": "^16.9.0",
     "resolve": "1.12.0",
     "resolve-url-loader": "3.1.0",
     "sass-loader": "7.2.0",
@@ -85,18 +88,20 @@
   },
   "jest": {
     "roots": [
-      "<rootDir>/src"
+      "<rootDir>/src",
+      "<rootDir>/app"
     ],
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
+      "app/**/*.{js,jsx,ts,tsx}",
       "!src/**/*.d.ts"
     ],
     "setupFiles": [
       "react-app-polyfill/jsdom"
     ],
-    "setupFilesAfterEnv": [],
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
+      "<rootDir>/app/**/__tests__/**/*.{js,jsx,ts,tsx}",
       "<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}"
     ],
     "testEnvironment": "jest-environment-jsdom-fourteen",
@@ -129,11 +134,17 @@
     "watchPlugins": [
       "jest-watch-typeahead/filename",
       "jest-watch-typeahead/testname"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/config/setupTests.js"
     ]
   },
   "babel": {
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "@testing-library/react": "^9.1.4"
   }
 }

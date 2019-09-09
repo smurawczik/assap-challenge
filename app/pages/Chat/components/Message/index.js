@@ -11,7 +11,7 @@ import { MESSAGE_STATUS } from '../../../../config/constants';
 
 import './styles.scss';
 
-const Messages = ({ className, message, from, repeatedUserMessage, lastMessage }) => {
+const Message = ({ className, message, from, repeatedUserMessage, lastMessage }) => {
   
   const [, dispatch] = useGlobalState();
 
@@ -59,8 +59,8 @@ const Messages = ({ className, message, from, repeatedUserMessage, lastMessage }
   );
 }
 
-Messages.defaultProps = {
+Message.defaultProps = {
   className: 'message',
 }
 
-export default Messages;
+export default Message;

@@ -9,13 +9,14 @@ import './styles.scss';
 const Chat = ({ className }) => {
   const [{ room }] = useGlobalState();
 
-  const admin = room.users.admin;
-  const user = room.users.customer;
+  const { users } = room;
+  const admin = users.admin;
+  const user = users.customer;
 
   return (
     <div className={className}>
-      <ChatView from={admin} to={user} />
-      <ChatView from={user} to={admin} />
+      { admin && <ChatView from={admin} to={user} /> }
+      { user && <ChatView from={user} to={admin} /> }
     </div>
   );
 }

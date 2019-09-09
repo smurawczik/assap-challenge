@@ -4,8 +4,10 @@ import './styles.scss';
 
 const UserTyping = ({ className, from }) => {
   return (
-    <div className={className}>{from.typing ? `${from.name} is writing...` : ''}</div>
-  );
+    from && from.typing 
+    ? <div className={className}>{`${from.name} is writing...`}</div>
+    : null
+  )
 }
 
 UserTyping.defaultProps = {

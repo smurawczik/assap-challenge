@@ -17,6 +17,7 @@ export const initialState = {
         type: USER_TYPES.CUSTOMER
       }
     },
+    // This messages are as a sample, but can be safely deleted
     messages: [
       {
         id: 1,
@@ -27,7 +28,7 @@ export const initialState = {
         fromStatus: MESSAGE_STATUS.SEND,
         toStatus: MESSAGE_STATUS.RECEIVED,
         datetime: moment().format("YYYY-MM-DD HH:mm:ss"),
-      },
+      }
     ],
   }
 }

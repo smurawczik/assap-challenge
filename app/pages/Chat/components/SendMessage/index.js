@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { useGlobalState } from '../../../../components/hooks';
+import Input from '../../../../components/Input';
 
 import { isTyping, sendMessageTo } from '../../actions';
 
@@ -62,12 +63,12 @@ const SendMessage = ({ className, from, to }) => {
           onClick={(e) => submitMessage(e)}
           className={`${className}--submit`}
         >Send</button>
-        <textarea
+        <Input
           className={`${className}--input`}
           value={message}
-          onKeyDown={e => startTyping(e)}
-          onChange={e => onTyping(e.target.value)}
-          placeholder="write your message"
+          onKeyDown={startTyping}
+          onChange={onTyping}
+          initialValue={message}
         />
       </div>
     </div>
